@@ -1,0 +1,64 @@
+syntax on
+filetype plugin on
+
+au FileType * set fo-=c fo-=r fo-=o
+
+set tabstop=2 softtabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
+
+set colorcolumn=80
+
+set guicursor=
+
+set relativenumber
+set number
+set ruler
+set re=0
+
+set nohlsearch
+set hidden
+
+set noerrorbells
+set belloff=all
+
+set nowrap
+
+set ignorecase
+set smartcase
+set incsearch
+
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+
+set scrolloff=8
+
+set timeout timeoutlen=5000 ttimeoutlen=100
+
+
+let mapleader=" "
+
+
+call plug#begin('~/.vim/plugged')
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdcommenter'
+Plug 'mbbill/undotree'
+call plug#end()
+
+
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
+colorscheme gruvbox
